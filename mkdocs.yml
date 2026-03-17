@@ -1,0 +1,58 @@
+site_name: ИИ Бармен Документация
+site_description: Полная документация микросервисной архитектуры ИИ Бармена
+site_author: Dzhamilia Fatkullina
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotate
+  palette:
+    primary: indigo
+    accent: deep orange
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - search
+  - glightbox 
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - tables
+
+nav:
+  - Главная: index.md
+  - Архитектура: architecture.md
+  - Быстрый старт: quickstart.md
+  - Микросервисы:
+    - Gateway API: services/gateway.md
+    - Telegram Bot: services/telegram.md
+    - RAG Service: services/rag.md
+    - Validation Service: services/validation.md
+    - Yandex API: services/yandex.md
+    - Logging Service: services/logging.md
+    - Lockbox Service: services/lockbox.md
+  - Мониторинг: monitoring.md
+  - Развертывание:
+    - Локально: deployment/local.md
+    - Yandex Cloud: deployment/yandex-cloud.md
+  - FAQ: faq.md
